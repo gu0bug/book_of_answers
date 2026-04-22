@@ -6,6 +6,7 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
+    base: './', // Add relative base for GitHub Pages compatibility
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
