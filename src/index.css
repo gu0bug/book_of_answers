@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold-primary: #d4af37;
+  --color-gold-glow: rgba(212, 175, 55, 0.6);
+  --color-parchment-light: #e8d8b0;
+  --color-parchment-dark: #c4aa76;
+  --color-ink-dark: #2c241b;
+
+  --font-title: "Cinzel", serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+body {
+  background-color: #050505;
+  background-image: radial-gradient(circle at 50% 50%, rgba(20, 20, 30, 1) 0%, rgba(5, 5, 5, 1) 80%);
+  color: var(--color-gold-primary);
+  font-family: var(--font-serif);
+}
+
+/* Parchment Texture */
+.parchment-bg {
+  background: linear-gradient(135deg, var(--color-parchment-light) 0%, var(--color-parchment-dark) 100%);
+  box-shadow: 
+    inset 0 0 40px rgba(90, 60, 20, 0.4),
+    0 20px 50px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.parchment-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Gold Glow Button */
+.gold-btn {
+  border: 1px solid var(--color-gold-primary);
+  box-shadow: 0 0 15px var(--color-gold-glow), inset 0 0 10px var(--color-gold-glow);
+  background: linear-gradient(to bottom, rgba(212,175,55,0.1), rgba(0,0,0,0.8));
+  text-shadow: 0 0 8px var(--color-gold-primary);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes spinSlow {
+  100% { transform: rotate(360deg); }
+}
+@keyframes spinReverse {
+  100% { transform: rotate(-360deg); }
+}
+.animate-magic-circle {
+  animation: spinSlow 20s linear infinite;
+}
+.animate-magic-circle-reverse {
+  animation: spinReverse 15s linear infinite;
+}
+
+textarea::placeholder {
+  color: rgba(44, 36, 27, 0.4);
+  font-style: italic;
+}
