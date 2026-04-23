@@ -1,8 +1,5 @@
 # 📖 The Book of Answers (答案之书)
 
-English documentation is followed by the Chinese version. | 中文文档在英文文档下方。
-
-English
 Overview
 The Book of Answers is a mystical, immersive Single Page Application (SPA) built with React. Designed with a dark fantasy and occult aesthetic, it simulates the experience of consulting an ancient, cosmic artifact for guidance.
 
